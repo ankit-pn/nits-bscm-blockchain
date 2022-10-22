@@ -1,11 +1,14 @@
 import { Avatar, Text, Group } from '@mantine/core'
 import React from 'react'
+import Logo from '../../components/utils/static/logoF.png'
 
 function Left() {
   return (
     <Group m='md'>
-        <Avatar mx={0} src={null} alt='app logo'/>
-        <Text color='#3BE21D'>APP NAME</Text>
+        <Avatar radius='lg' sx={{
+          fit : 'cover'
+        }} src={Logo} alt='app logo'/>
+        <Text color='#3BE21D'>BCSM</Text>
     </Group>
   )
 }

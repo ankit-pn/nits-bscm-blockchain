@@ -6,11 +6,11 @@ import {BrowserRouter as Router , Link } from 'react-router-dom';
 
 function MainLinks() {
     
-    const data = [
+    const data = localStorage.getItem('uid') ?  [
         {'text' : 'Home' , 'route' : '/'},
-        {'text' : 'Dummy' , 'route' : '/dummy'},
-        {'text' : 'Dummy 2' , 'route' : '/dummy 2'},
-    ]
+        {'text' : 'Entries' , 'route' : '/db'},
+        {'text' : 'Transactions' , 'route' : '/txn'},
+    ] : [ {'text' : 'Home' , 'route' : '/'},]
    const [active , setActive] = useState(window.location.pathname)
     // console.log(active)
 
@@ -51,7 +51,8 @@ return (
         
     { data.map((ele) => { return (
         <MediaQuery smallerThan='sm' styles={{display : 'none'}} key={ele.route}>
-        <UnstyledButton m={0} p = {0} component={Link} sx={{ fontWeight : '600',
+        <UnstyledButton m={0} p = {0} component={Link} sx={{ fontWeight : '700',
+         'fontFamily' : 'Josefin Sans' ,
             '&:hover' : {
             fontSize : '1.3rem'
         }}}  key={ele.text} to={ele.route}

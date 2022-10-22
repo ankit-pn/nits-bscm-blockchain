@@ -1,8 +1,9 @@
 import React from 'react'
 
 function Dummy() {
+  console.log(`${window.innerHeight - 70}`)
   return (
-    <div>Dummy Content is renderes here ......</div>
+    <div>HOMEPAGE Content is renders here ......[under progress...]</div>
   )
 }
 

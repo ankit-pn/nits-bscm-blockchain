@@ -1,5 +1,5 @@
 import {  ActionIcon, UnstyledButton, Drawer, Group, MediaQuery, Button, Stack } from '@mantine/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Left from './Left'
 import MainLinks from './MainLinks'
 import Right from './Right'
@@ -13,15 +13,21 @@ function NavContainer() {
   const [opened ,setOpened] = useState()
   const [active , setActive] = useState(window.location.pathname)
 
-  const data = [
+  const data = localStorage.getItem('uid') ?  [
     {'text' : 'Home' , 'route' : '/'},
-    {'text' : 'Dummy' , 'route' : '/dummy'},
-    {'text' : 'Dummy 2' , 'route' : '/dummy2'},
-]
+    {'text' : 'Entries' , 'route' : '/db'},
+    {'text' : 'Transactions' , 'route' : '/txn'},
+  ] : [{'text' : 'Home' , 'route' : '/'},]
   
+  useEffect(()=>{
+
+  },[localStorage.getItem('uid')])
+
   return (
+    <div>
     <Group sx={{
-      backgroundColor :'#2facd0'
+      backgroundColor :'green',
+      position : 'sticky' ,top: 0
     }}>
       <MediaQuery largerThan='sm' styles={{display : 'none'}}>
         <ActionIcon ml='sm' onClick={()=>setOpened(!opened)}><LayoutNavbarExpand
@@ -63,6 +69,7 @@ function NavContainer() {
       <Right/>
       
     </Group>
+    </div>
   )
 }
 
