@@ -1,5 +1,5 @@
 <p align="center">
-	<img width="300" height="200" src="https://github.com/ankit-pn/nits-bscm-blockchain/blob/main/image/photo_2022-10-22_09-28-14.jpg" />
+	<img width="500" height="200" src="https://github.com/ankit-pn/nits-bscm-blockchain/blob/main/image/photo_2022-10-22_09-28-14.jpg" />
 	</p>
 
 <p align="center">
