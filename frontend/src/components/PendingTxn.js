@@ -128,7 +128,7 @@ function PendingTxn() {
           <td><Text weight={600}>{ele.require_quantity}</Text></td>
           <td><Text weight={600}>{ele.available_quantity}</Text></td>
           <td><Text weight={600}>{ele.price}</Text></td>
-          <td> <Button onClick={()=>{
+          <td> <Button color='green' onClick={()=>{
             handlePopup(ele)
           }}>Approve Request</Button></td>
         </tr>   
@@ -148,10 +148,10 @@ function PendingTxn() {
     },[])
     return (
     <div>
-        {!connected && <Center> <Text color={'red'} weight='600'>Please connect to MetaMask to approve transaction</Text></Center>}
-        {!data ?  <Text m={'xl'} size='xl' weight={'600'} color='black'>Fetching Data...Please have patience</Text>:
+        {!connected && <Center> <Text color={'red'}  style={{fontFamily : 'bitter'}} weight='600'>Please connect to MetaMask to approve transaction</Text></Center>}
+        {!data ?  <Text m={'xl'} style={{fontFamily : 'bitter'}} size='xl' weight={'600'} color='black'>Fetching Data...Please have patience</Text>:
 
-        data.text ?<Text m={'xl'} size='xl' weight={'600'} color='black'>{data.text}</Text> :
+        data.text ?<Text m={'xl'} style={{fontFamily : 'bitter'}} size='xl' weight={'600'} color='black'>{data.text}</Text> :
             <Center>
             <Table   sx={{
                 maxWidth:'90%'
@@ -159,12 +159,12 @@ function PendingTxn() {
                 highlightOnHover withColumnBorders withBorder horizontalSpacing='md' verticalSpacing="md">
                     <thead>
                     <tr>
-                        <th><Text weight={700} color='#e64980'>Sr no.</Text></th>
-                        <th><Text weight={700} color='#e64980'>Item Name</Text></th>
-                        <th><Text weight={700} color='#e64980'>Required</Text></th>
-                        <th><Text weight={700} color='#e64980'>Available</Text></th>
-                        <th><Text weight={700} color='#e64980'>Price(per Unit)</Text></th>
-                        <th><Text weight={700} color='#e64980'>Approve</Text></th>
+                        <th><Text weight={800} color='red'>Sr no.</Text></th>
+                        <th><Text weight={800} color='red'>Item Name</Text></th>
+                        <th><Text weight={800} color='red'>Required</Text></th>
+                        <th><Text weight={800} color='red'>Available</Text></th>
+                        <th><Text weight={800} color='red'>Price(per Unit)</Text></th>
+                        <th><Text weight={800} color='red'>Approve</Text></th>
                     </tr>
                     </thead>
                     <tbody>{rows}</tbody>

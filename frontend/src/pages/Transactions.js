@@ -39,8 +39,8 @@ function Transaction() {
     return (
     <div>
         <Center>
-            <Button m='md' rightIcon={<Icon inline={true} icon="logos:metamask-icon" />} onClick={connectHandler}>{!connected ? 'Connect To MetaMask' : `Connected to wallet ${connected}`}</Button>
-            <Button onClick={()=>setDisp(!disp)}>{!disp ? 'Show History' : 'Pending Transactions'}</Button>
+            <Button m='md' sx={{fontFamily : 'bitter'}} color='green' rightIcon={<Icon inline={true} icon="logos:metamask-icon" />} onClick={connectHandler}>{!connected ? 'Connect To MetaMask' : `Connected to wallet ${connected}`}</Button>
+            <Button color='green' onClick={()=>setDisp(!disp)}>{!disp ? 'Show History' : 'Pending Transactions'}</Button>
         </Center>
 
         {disp ? <History /> : <PendingTxn/>}

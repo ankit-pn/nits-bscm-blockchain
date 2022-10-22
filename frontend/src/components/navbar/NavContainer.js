@@ -26,7 +26,7 @@ function NavContainer() {
   return (
     <div>
     <Group sx={{
-      backgroundColor :'green',
+      backgroundColor :'#006e39',
       position : 'sticky' ,top: 0
     }}>
       <MediaQuery largerThan='sm' styles={{display : 'none'}}>

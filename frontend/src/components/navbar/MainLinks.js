@@ -1,4 +1,4 @@
-import { Anchor, Button, UnstyledButton, Group, Text, Drawer, MediaQuery } from '@mantine/core'
+import { Anchor, Button, UnstyledButton, Group, Text, Drawer, MediaQuery, Grid } from '@mantine/core'
 import { useState } from 'react';
 import {BrowserRouter as Router , Link } from 'react-router-dom';
 
@@ -45,14 +45,14 @@ function MainLinks() {
 //   )
 
 return (
-    <Group>
+    <Grid justify='center'>
         
     {/* <Router> */}
         
     { data.map((ele) => { return (
+        <Grid.Col span={4}>
         <MediaQuery smallerThan='sm' styles={{display : 'none'}} key={ele.route}>
-        <UnstyledButton m={0} p = {0} component={Link} sx={{ fontWeight : '700',
-         'fontFamily' : 'Josefin Sans' ,
+        <UnstyledButton m={0} p = {0}  component={Link} sx={{ fontWeight : '700',
             '&:hover' : {
             fontSize : '1.3rem'
         }}}  key={ele.text} to={ele.route}
@@ -61,20 +61,24 @@ return (
                 textDecoration : 'underline',
                 textUnderlineOffset : '10px',
                 textDecorationThickness : '5px',
-                color : '#C63939'
+                color : 'rgb(64,20,181)'
             } : {}
         }
         onClick = {()=> setActive(ele.route)}
-        >
+        ><Text sx={{
+            fontFamily : 'bitter'
+        }} color={'white'}>
             {ele.text}
+            </Text>
         </UnstyledButton>
         </MediaQuery>
+        </Grid.Col>
         )
     } )}
     
     {/* </Router> */}
     
-    </Group>
+    </Grid>
   );
 }
 

@@ -8,7 +8,7 @@ function Left() {
         <Avatar radius='lg' sx={{
           fit : 'cover'
         }} src={Logo} alt='app logo'/>
-        <Text color='#3BE21D'>BCSM</Text>
+        <Text size='xl' weight={800} color='#9bf6b3'>BCSM</Text>
     </Group>
   )
 }

@@ -11,7 +11,7 @@ const [data ,setData] = useState(null)
     await axios.post('https://transaction-history.herokuapp.com/getHistory' , {
             'userId' : localStorage.getItem('uid'),
         }).then((res)=>{
-            if(res.data?.historyList?.length == 0){
+            if(res.data.message  == "No Records Found"){
                 setData({'text' : 'No Transaction History Found!!!'})
             }
             else{
@@ -43,9 +43,9 @@ const [data ,setData] = useState(null)
   
     return (
         <div>
-        {!data ?  <Text m={'xl'} size='xl' weight={'600'} color='black'>Fetching Data...Please have patience</Text>:
+        {!data ?  <Text m={'xl'} style={{fontFamily : 'bitter'}}  size='xl' weight={'600'} color='black'>Fetching Data...Please have patience</Text>:
 
-        data.text ?<Text m={'xl'} size='xl' weight={'600'} color='black'>{data.text}</Text> :
+        data.text ?<Text m={'xl'} style={{fontFamily : 'bitter'}}  size='xl' weight={'600'} color='black'>{data.text}</Text> :
             <Center>
             <Table   sx={{
                 maxWidth:'97%'
@@ -53,11 +53,11 @@ const [data ,setData] = useState(null)
                 highlightOnHover withColumnBorders withBorder horizontalSpacing='md' verticalSpacing="md">
                     <thead>
                     <tr>
-                        <th><Text weight={700} color='#e64980'>Sr no.</Text></th>
-                        <th><Text weight={700} color='#e64980'>Item Name</Text></th>
-                        <th><Text weight={700} color='#e64980'>Quantity</Text></th>
-                        <th><Text weight={700} color='#e64980'>Price</Text></th>
-                        <th><Text weight={700} color='#e64980'>Date</Text></th>
+                        <th><Text weight={700} color='red'>Sr no.</Text></th>
+                        <th><Text weight={700} color='red'>Item Name</Text></th>
+                        <th><Text weight={700} color='red'>Quantity</Text></th>
+                        <th><Text weight={700} color='red'>Price</Text></th>
+                        <th><Text weight={700} color='red'>Date</Text></th>
                         <th><Group spacing='xs'><Text weight={700} style={{display : 'inline-block'}} color='#e64980'>Transaction Hash<ExternalLink mt='md' color='#2facd0' strokeWidth={1.5} style={{display : 'inline-block'}}/> </Text></Group></th>
                     </tr>
                     </thead>
