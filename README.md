@@ -72,7 +72,7 @@
 ## Contributors
 * [Ankit Kumar](https://github.com/ankit-pn)
 * [Mayur Sonkusare](https://github.com/mayur-ud)
-* [Shubham Armo](https://github.com/##)
+* [Shubham Armo](https://github.com/space584)
 
 ---
 ## Video Link
